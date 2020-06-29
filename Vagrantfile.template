@@ -1,7 +1,7 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-# Custom StackStorm Vagrantfile shipped with the box.
+# Custom Coditation Vagrantfile shipped with the box.
 # User's Vagrantfile will be merged with this config, giving priority to user's settings.
 #
 # For more info about the original Vagrantfile load-order-merge mechanism see:
@@ -14,8 +14,8 @@ Vagrant.configure("2") do |config|
   # For a complete reference, please see the online documentation at
   # https://docs.vagrantup.com.
 
-  config.vm.box = "stackstorm/st2"
-  config.vm.hostname = "stackstorm"
+  config.vm.box = "coditation/st2"
+  config.vm.hostname = "coditation"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -28,7 +28,7 @@ Vagrant.configure("2") do |config|
   # via 127.0.0.1 to disable public access
   # config.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "127.0.0.1"
 
-  # Expose StackStorm Web UI via localhost:9000
+  # Expose Coditation Web UI via localhost:9000
   # This is a fallback option to access the WebUI in case when "private_network" doesn't work
   config.vm.network "forwarded_port",
     guest: 443, host: 9000,
@@ -39,7 +39,7 @@ Vagrant.configure("2") do |config|
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
 
-  # Expose access to StackStorm via IP
+  # Expose access to Coditation via IP
   config.vm.network :private_network,
     ip: "10.10.10.10",
     netmask: "255.255.255.252"
@@ -56,7 +56,7 @@ Vagrant.configure("2") do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
 
   config.vm.provider :virtualbox do |vb|
-    vb.name = "stackstorm"
+    vb.name = "coditation"
     vb.gui = false
     vb.memory = 2048
     vb.cpus = 2
@@ -76,10 +76,10 @@ Vagrant.configure("2") do |config|
     Username: st2admin
     Password: Ch@ngeMe
 
-  Thanks for trying StackStorm!
+  Thanks for trying Coditation!
 WELCOME
 
-  # Show currently installed StackStorm version
+  # Show currently installed Coditation version
   config.vm.provision "st2-version",
     type: "shell",
     inline: "st2 --version",

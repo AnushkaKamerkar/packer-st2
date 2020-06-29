@@ -2,7 +2,7 @@
 
 # TODO: Eventually this step will not be required since these packages will be part of the custom
 #       image (which hasn't been created yet).
-# TODO: See "Codify the ova build Infrastructure #8": https://github.com/StackStorm/ova/issues/8
+# TODO: See "Codify the ova build Infrastructure #8": https://github.com/Coditation/ova/issues/8
 
 sudo apt-get install -y unzip
 

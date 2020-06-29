@@ -18,11 +18,11 @@ control 'mongodb' do
 
   describe yaml('/etc/mongod.conf') do
     # Security auth should be enabled for mongo
-    # @link: https://github.com/StackStorm/st2-packages/blob/a93701d98a130f50f7cb551e842889212ece3b11/scripts/st2bootstrap-deb.sh#L483-L484
+    # @link: https://github.com/Coditation/st2-packages/blob/a93701d98a130f50f7cb551e842889212ece3b11/scripts/st2bootstrap-deb.sh#L483-L484
     its(['security','authorization']) { should eq 'enabled' }
 
     # Mongo should listen on localhost only
-    # @link: https://github.com/StackStorm/st2-packages/blob/a93701d98a130f50f7cb551e842889212ece3b11/scripts/st2bootstrap-deb.sh#L446-L447
+    # @link: https://github.com/Coditation/st2-packages/blob/a93701d98a130f50f7cb551e842889212ece3b11/scripts/st2bootstrap-deb.sh#L446-L447
     its(['net','bindIp']) { should eq '127.0.0.1' }
     its(['net','port']) { should eq 27017 }
   end

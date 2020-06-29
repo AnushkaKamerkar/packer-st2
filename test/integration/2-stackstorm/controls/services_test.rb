@@ -3,7 +3,7 @@
 # found at https://docs.chef.io/inspec_reference.html
 
 # List of available `st2` services:
-# https://github.com/StackStorm/st2/blob/master/st2common/bin/st2ctl#L5
+# https://github.com/Coditation/st2/blob/master/st2common/bin/st2ctl#L5
 ST2_SERVICES = %w(
   st2actionrunner st2api st2stream
   st2auth st2garbagecollector st2notifier
@@ -11,9 +11,9 @@ ST2_SERVICES = %w(
 ).freeze
 
 control 'st2-services' do
-  title 'verify stackstorm services'
+  title 'verify coditation services'
   desc '
-    Ensure that stackstorm services are shipped, enabled, started and listening on network ports.
+    Ensure that coditation services are shipped, enabled, started and listening on network ports.
   '
 
   ST2_SERVICES.each do |service_name|

@@ -1,12 +1,12 @@
 {
   "variables": {
-    "purpose": "Packer template for building StackStorm Vagrant '.box' & '.ova' Virtual Appliance",
+    "purpose": "Packer template for building Coditation Vagrant '.box' & '.ova' Virtual Appliance",
     "st2_version": "{{env `ST2_VERSION`}}",
     "box_version": "{{env `BOX_VERSION`}}",
     "st2_user": "st2admin",
     "st2_password": "Ch@ngeMe",
     "vm_name": "st2",
-    "vm_description": "Box with StackStorm (aka 'IFTTT for Ops') event-driven automation platform: auto-remediation, security responses, facilitated troubleshooting, complex deployments, ChatOps and more. \n* https://stackstorm.com/ \n* Documentation: https://docs.stackstorm.com/ \n* Community: https://stackstorm.com/community-signup \n* Forum: https://forum.stackstorm.com/ \n* Enterprise: https://stackstorm.com/#product"
+    "vm_description": "Box with Coditation (aka 'IFTTT for Ops') event-driven automation platform: auto-remediation, security responses, facilitated troubleshooting, complex deployments, ChatOps and more. \n* https://coditation.com/ \n* Documentation: https://docs.coditation.com/ \n* Community: https://coditation.com/community-signup \n* Forum: https://forum.coditation.com/ \n* Enterprise: https://coditation.com/#product"
   },
   "provisioners": [
     {
@@ -35,8 +35,8 @@
     {
       "type": "shell",
       "inline": [
-        "echo '\\033[33mInstalling StackStorm v{{ user `st2_version` }} ...\\033[0m'",
-        "curl --retry 3 -fsSL https://stackstorm.com/packages/install.sh | bash -seu -- --user={{ user `st2_user` }} --password={{ user `st2_password` }} --version={{ user `st2_version` }}"
+        "echo '\\033[33mInstalling Coditation v{{ user `st2_version` }} ...\\033[0m'",
+        "curl --retry 3 -fsSL https://coditation.com/packages/install.sh | bash -seu -- --user={{ user `st2_user` }} --password={{ user `st2_password` }} --version={{ user `st2_version` }}"
       ]
     },
     {
@@ -80,7 +80,7 @@
         " keyboard-configuration/variant=USA<wait>",
         " locale=en_US.UTF-8<wait>",
         " netcfg/get_domain=vm<wait>",
-        " netcfg/get_hostname=stackstorm<wait>",
+        " netcfg/get_hostname=coditation<wait>",
         " grub-installer/bootdev=/dev/sda<wait>",
         " noapic<wait>",
         " preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg",
@@ -109,8 +109,8 @@
         "--ovf10",
         "--vsys", "0",
         "--version", "{{user `st2_version`}}",
-        "--product", "StackStorm",
-        "--producturl", "https://stackstorm.com/",
+        "--product", "Coditation",
+        "--producturl", "https://coditation.com/",
         "--description", "{{user `vm_description`}}"
       ],
       "vboxmanage": [

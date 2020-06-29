@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   # VirtualBox.
   # `vagrant up virtualbox --provider=virtualbox`
   config.vm.define "virtualbox" do |virtualbox|
-    virtualbox.vm.hostname = "stackstorm-virtualbox"
+    virtualbox.vm.hostname = "coditation-virtualbox"
     # TODO: Try to automatically find & use the latest box from the ./builds dir?
     virtualbox.vm.box = "file://builds/st2_v2.7.0-1523648841.box"
   end

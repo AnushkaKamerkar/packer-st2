@@ -17,7 +17,7 @@
     {
       "type": "vagrant-cloud-standalone",
       "access_token": "{{user `cloud_token`}}",
-      "box_tag": "stackstorm/st2",
+      "box_tag": "coditation/st2",
       "provider": "virtualbox",
       "version": "{{user `st2_version`}}-{{user `box_version`}}",
       "artifact": "builds/{{user `vm_name`}}_v{{user `st2_version`}}-{{user `box_version`}}.box"

@@ -86,7 +86,7 @@ jobs:
           at: ~/ova
       # Install the requirements like virtualbox on the bare metal server.
       # TODO: Eventually this step will not be required since these packages will be part of the custom image (which hasn't been created yet).
-      # TODO: See "Codify the ova build Infrastructure #8": https://github.com/StackStorm/ova/issues/8
+      # TODO: See "Codify the ova build Infrastructure #8": https://github.com/Coditation/ova/issues/8
       - run:
           name: Provision the bare metal server
           command: ansible-playbook -v -i inventory provision.yml

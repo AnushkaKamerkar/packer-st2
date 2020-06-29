@@ -6,7 +6,7 @@ control 'st2web' do
   title 'Integrity check'
   desc '
     Check that st2web is installed, dependant service nginx is running with the correct st2.conf
-    web config, stackstorm REST API URL endpoints are available and Web UI actually works.
+    web config, coditation REST API URL endpoints are available and Web UI actually works.
   '
 
   # Only one of the 2 expressions should succeed
@@ -90,7 +90,7 @@ control 'st2web' do
     its('body') { should match /st2constants/ }
   end
 
-  # StackStorm API URL endpoints check, defined in nginx
+  # Coditation API URL endpoints check, defined in nginx
   %w(api auth stream).each do |service|
     describe http("https://localhost/#{service}/", ssl_verify: false, enable_remote_worker: true) do
       its('headers.content-type') { should cmp 'application/json' }

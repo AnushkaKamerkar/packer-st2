@@ -1,6 +1,6 @@
 #!/bin/bash -eux
 
-echo -e '\033[33mRunning cleanup scripts before installing StackStorm ...\033[0m'
+echo -e '\033[33mRunning cleanup scripts before installing Coditation ...\033[0m'
 
 # Delete all Linux headers
 dpkg --list \
@@ -24,7 +24,7 @@ dpkg --list \
     | xargs apt-get -y purge;
 
 # Delete development packages
-# NB! Run this before installing StackStorm as it may pull some 'dev' dependencies itself
+# NB! Run this before installing Coditation as it may pull some 'dev' dependencies itself
 dpkg --list \
     | awk '{ print $2 }' \
     | grep -- '-dev$' \

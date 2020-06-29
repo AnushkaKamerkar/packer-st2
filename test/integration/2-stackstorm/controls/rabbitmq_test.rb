@@ -15,7 +15,7 @@ control 'rabbitmq' do
   describe file('/etc/rabbitmq/rabbitmq-env.conf') do
     it { should exist }
     # RabbitMQ should listen on localhost only
-    # @link: https://github.com/StackStorm/st2-packages/blob/a93701d98a130f50f7cb551e842889212ece3b11/scripts/st2bootstrap-deb.sh#L425-L426
+    # @link: https://github.com/Coditation/st2-packages/blob/a93701d98a130f50f7cb551e842889212ece3b11/scripts/st2bootstrap-deb.sh#L425-L426
     its('content') { should match /^RABBITMQ_NODE_IP_ADDRESS=127.0.0.1$/ }
   end
 

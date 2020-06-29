@@ -18,7 +18,7 @@ control 'st2chatops' do
     it { should be_enabled }
   end
 
-  describe file('/opt/stackstorm/chatops/st2chatops.env') do
+  describe file('/opt/Coditation/chatops/st2chatops.env') do
     it { should exist }
   end
 end
